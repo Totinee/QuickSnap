@@ -133,6 +133,7 @@ namespace CardGames.GameLogic
 		public void PlayerHit (int player)
 		{
 			//TODO: consider deducting score for miss hits???
+			Console.WriteLine("A change is made while working from add-player-hit branch");
 			if ( player >= 0 && player < _score.Length &&  	// its a valid player
 				 IsStarted && 								// and the game is started
 				 _topCards [0] != null && _topCards [0].Rank == _topCards [1].Rank) // and its a match
