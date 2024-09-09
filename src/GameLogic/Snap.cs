@@ -133,7 +133,8 @@ namespace CardGames.GameLogic
 		public void PlayerHit (int player)
 		{
 			//TODO: consider deducting score for miss hits???
-			Console.WriteLine("A new line added in add-automatic-card-flip branch");
+			Console.WriteLine("This new line is added to resolve conflict between app-player-hit branch and add-automatic-card-flip branch");
+			
 			if ( player >= 0 && player < _score.Length &&  	// its a valid player
 				 IsStarted && 								// and the game is started
 				 _topCards [0] != null && _topCards [0].Rank == _topCards [1].Rank) // and its a match
@@ -141,6 +142,10 @@ namespace CardGames.GameLogic
 				_score[player]++;
 				//TODO: consider playing a sound here...
 			}
+			else if ( player >= 0 && player < _score.Length)
+				{
+					_score[player]--;
+				}
 
 			// stop the game...
 			_started = false;
